@@ -1,0 +1,77 @@
+{
+  "name": "vscode-context-menu-command",
+  "displayName": "%displayName%",
+  "description": "%description%",
+  "version": "0.1.0",
+  "engines": {
+    "vscode": "^1.142.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "main": "./src/extension.js",
+  "extensionKind": [
+    "ui"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "capabilities": {
+    "untrustedWorkspaces": {
+      "supported": false
+    },
+    "virtualWorkspaces": {
+      "supported": false
+    }
+  },
+  "scripts": {
+    "test": "node --test",
+    "check": "node --check src/extension.js && node --check src/runner.js"
+  },
+  "contributes": {
+    "commands": [
+      {
+        "command": "contextMenuCommand.openCode",
+        "title": "%openCode%",
+        "enablement": "isWorkspaceTrusted && !remoteName"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "contextMenuCommand.openCode",
+          "when": "explorerResourceIsFolder && resourceScheme == file && !remoteName && isWorkspaceTrusted && contextMenuCommand.openCodeEnabled",
+          "group": "navigation@10"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "%configuration.title%",
+      "properties": {
+        "contextMenuCommand.openCode.enabled": {
+          "type": "boolean",
+          "default": false,
+          "description": "%enabled%",
+          "scope": "window"
+        },
+        "contextMenuCommand.openCode.command": {
+          "type": "string",
+          "default": "code",
+          "description": "%command%",
+          "scope": "window"
+        },
+        "contextMenuCommand.openCode.args": {
+          "type": "array",
+          "default": [
+            "--new-window"
+          ],
+          "description": "%args%",
+          "scope": "window",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

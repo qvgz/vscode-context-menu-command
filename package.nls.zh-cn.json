@@ -1,0 +1,9 @@
+{
+  "displayName": "资源管理器命令菜单",
+  "description": "通过固定的资源管理器文件夹菜单执行配置的本地命令。",
+  "configuration.title": "右键菜单命令",
+  "enabled": "在资源管理器文件夹右键菜单中显示此操作。",
+  "command": "PATH 中的可执行文件名称或可执行文件路径，不支持 Shell 语法。",
+  "args": "在所选文件夹路径之前传递的参数。",
+  "openCode": "在 Code 中打开"
+}

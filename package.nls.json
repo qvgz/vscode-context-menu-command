@@ -1,0 +1,9 @@
+{
+  "displayName": "Context Menu Command",
+  "description": "Run configured local commands from fixed Explorer folder menus.",
+  "configuration.title": "Context Menu Commands",
+  "enabled": "Show this action in the Explorer folder context menu.",
+  "command": "Executable name on PATH or executable path. Shell syntax is not supported.",
+  "args": "Arguments passed before the selected folder path.",
+  "openCode": "Open in Code"
+}
